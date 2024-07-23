@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background-color: #3962eb;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      display: flex;
+      text-align: center;
+      padding: 20px;
+      background: rgb(99, 76, 244);
+      border-bottom: 1px solid #ddd;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+    }
+
+    .left-container, .right-container {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(252, 252, 252, 0.1);
+      padding: 20px;
+      width: 100%;
+    }
+
+    .left-container {
+      flex: 1 1 45%;
+      margin-right: 10px;
+    }
+
+    .right-container {
+      flex: 1 1 45%;
+      display: flex;
+      flex-direction: column;
+      margin-left: 10px;
+    }
+
+    .section {
+      margin-bottom: 20px;
+    }
+
+    .input-field, .button, select {
+      width: calc(100% - 22px);
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+
+    .button {
+
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+    background-color: #9ec9e6; /* Color de fondo cuando el mouse está encima */
+    }
+    button:active {
+    transform: scale(0.95); /* Escala el botón cuando se hace clic */
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0;
+    }
+
+    th, td {
+      padding: 8px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f4f4f4;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .left-container, .right-container {
+        margin: 0;
+        width: 100%;
+      }
+    }
+    h1{
+      text-align: center;
+      color: rgb(243, 243, 243);
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <img src="img/Designer.png" alt="" style="height: 7rem;">
+    <h1>Farmacia Vida Plena</h1>
+  </div>
+  
+  <div class="container">
+    <div class="left-container">
+      <div class="section">
+        <h2>Responsable Venta</h2>
+        <select id="responsable" class="input-field">
+          <option value="Admin">Admin</option>
+          <option value="Vendedor 1">Vendedor 1</option>
+          <option value="Vendedor 2">Vendedor 2</option>
+        </select>
+      </div>
+      <div class="section">
+        <h3>Forma de pago</h3>
+        <select id="forma-pago" class="input-field">
+          <option value="Efectivo">Efectivo</option>
+          <option value="Tarjeta">Tarjeta</option>
+        </select>
+        <button class="button">Gravar Venta</button>
+      </div>
+    </div>
+    
+    <div class="right-container">
+      <div class="section">
+        <h3>Codigo Producto</h3>
+        <input type="text" class="input-field" placeholder="Ingrese código">
+        <table>
+          <thead>
+            <tr>
+              <th>Codigo</th>
+              <th>Producto</th>
+              <th>Referencia</th>
+              <th>Cant</th>
+              <th>Precio</th>
+              <th>Subtotal</th>
+              <th>Exist</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Aquí se irán añadiendo los productos -->
+          </tbody>
+        </table>
+      </div>
+      <div class="section">
+        <h3>Totales</h3>
+        <table>
+          <tbody>
+            <tr>
+              <td>RETEFUENTE</td>
+              <td>0,00</td>
+            </tr>
+            <tr>
+              <td>IVA</td>
+              <td>0,00</td>
+            </tr>
+            <tr>
+              <td>TOTAL</td>
+              <td>0,00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
